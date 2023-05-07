@@ -33,6 +33,7 @@
                 android:textColor="@color/black"
                 android:layout_marginTop="3dp"
                 android:layout_marginStart="2dp"
+                android:textStyle="bold"
                 android:id="@+id/id"></TextView>
 
             <TextView
@@ -56,6 +57,7 @@
                 android:layout_marginStart="2dp"
                 android:id="@+id/email"></TextView>
 
+
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -64,37 +66,61 @@
                 android:layout_marginStart="2dp"
                 android:text="Address : "></TextView>
 
-            <TextView
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textStyle="bold"
-                android:textColor="@color/black"
-                android:layout_marginStart="2dp"
-                android:id="@+id/siutname"></TextView>
+                android:orientation="horizontal">
 
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:textStyle="bold"
-                android:textColor="@color/black"
-                android:layout_marginStart="2dp"
-                android:id="@+id/streetname"></TextView>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textStyle="bold"
+                    android:textColor="@color/black"
+                    android:layout_marginStart="2dp"
+                    android:id="@+id/siutname"></TextView>
 
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:textStyle="bold"
-                android:layout_marginStart="2dp"
-                android:textColor="@color/black"
-                android:id="@+id/cityname"></TextView>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textStyle="bold"
+                    android:textColor="@color/black"
+                    android:layout_marginStart="2dp"
+                    android:id="@+id/streetname"></TextView>
 
-            <TextView
+
+
+            </LinearLayout>
+
+
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textStyle="bold"
-                android:layout_marginStart="2dp"
-                android:textColor="@color/black"
-                android:id="@+id/zipcode"></TextView>
+                android:orientation="horizontal">
+
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textStyle="bold"
+                    android:layout_marginStart="2dp"
+                    android:textColor="@color/black"
+                    android:id="@+id/cityname"></TextView>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textStyle="bold"
+                    android:layout_marginStart="2dp"
+                    android:textColor="@color/black"
+                    android:id="@+id/zipcode"></TextView>
+
+
+            </LinearLayout>
+
+
+
+
 
 
 

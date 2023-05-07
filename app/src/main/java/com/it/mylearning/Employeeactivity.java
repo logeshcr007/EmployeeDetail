@@ -24,9 +24,9 @@ import retrofit2.Response;
 
 public class Employeeactivity extends AppCompatActivity {
 
-    TextView name, email, empid, phone, webiste, comapny_name, siutname, streetname, cityname, zipcode;
+    TextView name, email, empid, phone, webiste, company_name, suitname, streetname, cityname, zipcode;
     int id;
-    String string_siutname, String_streetname;
+
     Toolbar employee_toolbar;
 
 
@@ -38,12 +38,10 @@ public class Employeeactivity extends AppCompatActivity {
 
         employee_toolbar = findViewById( R.id. employeedetila_toolbar);
         setSupportActionBar(employee_toolbar);
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setTitle("Employee Detail");
 
 
         Intent intent = getIntent();
-
         id = intent.getIntExtra("id", 0);
         Log.e("tag", "the touch id " + id);
 
@@ -53,8 +51,8 @@ public class Employeeactivity extends AppCompatActivity {
         empid = findViewById(R.id.id);
         phone = findViewById(R.id.phone);
         webiste = findViewById(R.id.website);
-        comapny_name = findViewById(R.id.companname);
-        siutname = findViewById(R.id.siutname);
+        company_name = findViewById(R.id.companname);
+        suitname = findViewById(R.id.siutname);
         streetname = findViewById(R.id.streetname);
         cityname = findViewById(R.id.cityname);
         zipcode = findViewById(R.id.zipcode);
@@ -62,11 +60,11 @@ public class Employeeactivity extends AppCompatActivity {
         if (MyUtils.isNetworkAvailable(Employeeactivity.this)) {
             dofetch();
         } else {
-            Toast.makeText(getApplicationContext(), "pLease check your connection", Toast.LENGTH_LONG).show();
+            Toast.makeText(getApplicationContext(), "Please check your connection", Toast.LENGTH_LONG).show();
         }
 
 
-        dofetch();
+
     }
 
     private void dofetch() {
@@ -82,15 +80,13 @@ public class Employeeactivity extends AppCompatActivity {
                     webiste.setText("website" + " : " + response.body().getWebsite());
                     String id = String.valueOf(response.body().getId());
                     empid.setText("Employee id:" + id);
-                    comapny_name.setText("comapny name" + "  -  " + response.body().getCompany().getName());
+                    company_name.setText("company name" + "  -  " + response.body().getCompany().getName());
                     String sphone = response.body().getPhone();
-                    phone.setText("phonen no  " + " - " + sphone);
-                    siutname.setText(response.body().getAddress().getSuite() );
+                    phone.setText("phone no  " + " - " + sphone);
+                    suitname.setText(response.body().getAddress().getSuite() +" , " );
                     streetname.setText(response.body().getAddress().getStreet());
-                    cityname.setText(response.body().getAddress().getCity());
+                    cityname.setText(response.body().getAddress().getCity() + " , " );
                     zipcode.setText(response.body().getAddress().getZipcode());
-
-
 
                 } catch (Exception e) {
                     Log.e("TAG", "THE ERROR IS " + e.toString());

@@ -1,5 +1,7 @@
 package com.modellcass;
 
+import androidx.annotation.NonNull;
+
 import com.google.gson.annotations.SerializedName;
 
 public class ResponseItem{
@@ -183,6 +185,12 @@ public class ResponseItem{
 
 		public String getStreet(){
 			return street;
+		}
+
+		@NonNull
+		@Override
+		public String toString() {
+			return suite + " , "  +street;
 		}
 	}
 }

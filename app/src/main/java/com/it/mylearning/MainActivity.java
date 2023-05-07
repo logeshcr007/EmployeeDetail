@@ -38,7 +38,6 @@ public class MainActivity extends AppCompatActivity {
         recyclerView = findViewById(R.id.recycler);
         employee_toolbar = findViewById( R.id. employee_toolbar);
         setSupportActionBar(employee_toolbar);
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setTitle("Employee List");
 
         responseItemArrayList = new ArrayList<>();
@@ -49,9 +48,6 @@ public class MainActivity extends AppCompatActivity {
             Toast.makeText(getApplicationContext(),"Please check your connection", Toast.LENGTH_LONG).show();
         }
 
-
-
-        dofetch();
     }
 
 
